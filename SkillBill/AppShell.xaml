@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SkillBill.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SkillBill"
+    xmlns:startupPages="clr-namespace:SkillBill.Views"
+    xmlns:dashboards="clr-namespace:SkillBill.Views.Dashboards"
+    >
+    <Shell.Resources>
+        <LinearGradientBrush EndPoint="1,0" x:Key="bbrzcolor">
+            <GradientStop Color="#a60084"
+                          Offset="0.1" />
+            <GradientStop Color="#005aa9"
+                          Offset="1.0" />
+        </LinearGradientBrush>
+    </Shell.Resources>
+    <ShellContent
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Title="Log In"       
+        ContentTemplate="{DataTemplate startupPages:LoadingPage}"
+        Route="LoadingPage" 
+         />
+    <ShellContent
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Title="Log In"       
+        ContentTemplate="{DataTemplate startupPages:InternalLogInPage}"
+        Route="InternalLogInPage" 
+        />
+    <!--<FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Homepage"
+            Shell.BackgroundColor="#005aa9"
+            Icon="homepage.png"
+            ContentTemplate="{DataTemplate startupPages:HomePage}"
+            Route="HomePage"
+           />
+
+        <ShellContent
+            Icon="exam.png"
+            Title="Skills"
+            ContentTemplate="{DataTemplate startupPages:HomePage}"
+            Route="Skills"
+            />
+        <ShellContent
+            Title="Chat"
+             Icon="chat.png"
+            ContentTemplate="{DataTemplate startupPages:HomePage}"
+            Route="Chat"
+            />
+
+    </FlyoutItem>-->
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="30">
+            <Button Text="SIGN OUT"
+                    Background="{StaticResource bbrzcolor}"
+                    Command="{Binding LogoutCommand}"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+</Shell>
